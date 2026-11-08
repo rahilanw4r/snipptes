@@ -13,72 +13,132 @@
 
 *Capture quotes, code blocks, reference links, and images across the web with a single right-click — organized, searchable, and always at your fingertips.*
 
----
+<br/>
+
+<img src="assets/showcase.png" alt="Snippets Walkthrough" width="900" style="border-radius: 10px; box-shadow: 0 12px 32px rgba(0,0,0,0.4);" />
 
 </div>
+
+---
 
 ## 📑 Table of Contents
 
 - [Overview](#-overview)
-- [Key Features](#-key-features)
-- [How It Works](#-how-it-works)
+- [How to Use the Extension](#-how-to-use-the-extension)
+  - [1. Clipping Content from Any Webpage](#1-clipping-content-from-any-webpage)
+  - [2. Organizing & Pinning Snippets](#2-organizing--pinning-snippets)
+  - [3. Searching & Filtering](#3-searching--filtering)
+  - [4. In-Place Editing](#4-in-place-editing)
+  - [5. Batch Selection & Bulk Cleanup](#5-batch-selection--bulk-cleanup)
+  - [6. Exporting & Restoring Backups](#6-exporting--restoring-backups)
+- [Features](#-features)
 - [Installation Guide](#-installation-guide)
-- [Usage & Shortcuts](#-usage--shortcuts)
+- [Keyboard Shortcuts](#-keyboard-shortcuts)
 - [Data Privacy & Storage](#-data-privacy--storage)
-- [Project Structure](#-project-structure)
-- [Development & Customization](#-development--customization)
+- [Project Architecture](#-project-architecture)
 - [License](#-license)
 
 ---
 
 ## 💡 Overview
 
-**Snippets** is an extension built to eliminate context switching while browsing and researching. Instead of maintaining messy scratchpads or switching to note-taking apps, you can save web contents in real time and find them instantly in a sleek, non-intrusive popup.
+**Snippets** is designed to eliminate context switching while browsing, researching, or writing code. Instead of copying text back and forth between temporary tabs, chat windows, or heavy desktop note apps, Snippets lets you collect reference material directly from the browser context menu and access it instantly through an uncluttered popup.
 
-No external tracking, no backend server, no cloud sync lock-in — everything lives entirely inside your browser's local sandbox.
+Everything is stored in your local browser sandbox — no account registration, no remote servers, and zero telemetry.
 
 ---
 
-## ✨ Key Features
+## 📖 How to Use the Extension
 
-| Feature | Description |
+### 1. Clipping Content from Any Webpage
+
+You can save any content from any tab using the built-in browser context menu:
+
+- **Save Text / Code**: Highlight any text on the page $\rightarrow$ Right-click $\rightarrow$ select **"Save selection to Snippets"**.
+- **Save Links**: Right-click on any hyperlink $\rightarrow$ select **"Save link to Snippets"**.
+- **Save Images**: Right-click on any picture or photo $\rightarrow$ select **"Save image to Snippets"**.
+- **Save Entire Page**: Right-click on an empty part of the webpage $\rightarrow$ select **"Save page to Snippets"**.
+
+> *When a snippet is clipped, the extension badge briefly flashes a blue checkmark (`✓`) in your toolbar to confirm the save without interrupting your reading.*
+
+---
+
+### 2. Organizing & Pinning Snippets
+
+Click the **Snippets** icon in your browser toolbar to open your personal snippet tray:
+
+<div align="center">
+  <img src="assets/extension-popup.png" alt="Extension Main Popup" width="380" style="border-radius: 10px; box-shadow: 0 8px 24px rgba(0,0,0,0.3);" />
+</div>
+
+- **Pin High-Priority Items**: Click the **Pin** icon on any snippet card to promote it to the **Pinned** section at the top. Pinned snippets always remain visible above recent clips.
+- **Unpin Anytime**: Clicking the pin icon again moves the snippet back into the chronological **Recent** list.
+- **Drag & Drop Reordering**: Grab the 6-dot drag handle on the top-right of any card to drag and reorder cards within the section.
+- **One-Click Copy**: Click the **Copy** icon to immediately copy the snippet's raw content to your system clipboard with a subtle toast notification.
+- **Read More**: Long snippets are automatically clamped to 4 lines. Click **Read More** / **Read Less** to expand or collapse.
+
+---
+
+### 3. Searching & Filtering
+
+- **Instant Search**: Type into the search input at the top to filter across snippet content, web page titles, and source URLs simultaneously in real time.
+- **Category Pills**: Tap on the filter pills (`All`, `Text`, `Links`, `Images`, `Pages`) to narrow down items by content type.
+
+---
+
+### 4. In-Place Editing
+
+Need to add a personal comment, clean up boilerplate, or update a snippet title?
+
+<div align="center">
+  <img src="assets/edit-modal.png" alt="Edit Snippet Modal" width="380" style="border-radius: 10px; box-shadow: 0 8px 24px rgba(0,0,0,0.3);" />
+</div>
+
+1. Click the **Edit** (pencil) icon on any card.
+2. Update the **Title / Source** or edit the **Content** text area.
+3. Click **Save Changes** (or press `Esc` / click the overlay background to cancel).
+
+---
+
+### 5. Batch Selection & Bulk Cleanup
+
+When you want to clean up multiple outdated notes at once:
+
+1. Click the **Multi-Select** checklist icon in the header.
+2. Click any snippet cards you want to mark for deletion.
+3. Click the red **Trash** button to delete all selected snippets at once, or click **Cancel** (`✕`) to exit selection mode.
+
+---
+
+### 6. Exporting & Restoring Backups
+
+Your data is completely under your control and portable:
+
+<div align="center">
+  <img src="assets/settings-modal.png" alt="Settings & Data Modal" width="380" style="border-radius: 10px; box-shadow: 0 8px 24px rgba(0,0,0,0.3);" />
+</div>
+
+- **Export JSON**: Click the **Settings** (gear) icon in the header $\rightarrow$ click **Export** to download a clean, dated JSON backup file (`snippets_backup_YYYY-MM-DD.json`).
+- **Import JSON**: Click **Import** and select any backup JSON file. Snippets are merged smoothly with collision-free unique IDs.
+- **Clear All Data**: Reset your local extension storage when starting a fresh workspace.
+
+---
+
+## ✨ Features
+
+| Feature | Detail |
 | :--- | :--- |
-| **🖱️ One-Click Clipper** | Right-click any selected text, image, link, or page to clip directly into your library. |
-| **📌 Pin to Top** | Pin essential notes or frequently referenced links to keep them always visible at the top. |
-| **✋ Drag & Drop Reordering** | Smoothly rearrange cards inside your Pinned or Recent sections. |
-| **⚡ Real-Time Search** | Fast, instant search matching across snippet bodies, titles, and source URLs. |
-| **🏷️ Category Filters** | Filter with a single tap: `All`, `Text`, `Links`, `Images`, and `Pages`. |
-| **✏️ In-Place Editor** | Adjust snippet content or edit custom title and source metadata directly in the extension. |
-| **☑️ Batch Selection** | Enter Multi-Select Mode to remove multiple snippets at once. |
-| **💾 JSON Backup & Restore** | Export full backups into standard JSON files and restore anytime with collision-safe IDs. |
-| **🌙 Modern Dark Theme** | Polished, distraction-free interface matching system dark modes with subtle animations. |
-
----
-
-## 🔍 How It Works
-
-```
-  ┌────────────────────────┐
-  │  Web Page (Any Tab)    │
-  └───────────┬────────────┘
-              │  Right-Click Context Menu
-              ▼
-  ┌────────────────────────┐
-  │  Background Worker     │  (background.js)
-  │  Captures text/img/url │
-  └───────────┬────────────┘
-              │  chrome.storage.local
-              ▼
-  ┌────────────────────────┐
-  │  Local Storage         │  100% on your machine
-  └───────────┬────────────┘
-              │  Synchronized
-              ▼
-  ┌────────────────────────┐
-  │  Snippets Popup UI     │  (popup.html / popup.js / popup.css)
-  │  Search, Pin, Reorder  │
-  └────────────────────────┘
-```
+| **🚀 Instant Web Clipper** | Saves text selections, links, images, and full pages straight from the browser right-click menu. |
+| **📌 Dual-Section Organization** | Distinct Pinned and Recent sections for clean visual hierarchy. |
+| **✋ Smooth Drag & Drop** | Native HTML5 drag-and-drop reordering without flickering or external libraries. |
+| **⚡ Instant Search Engine** | Sub-millisecond substring matching across bodies, source titles, and origin URLs. |
+| **🏷️ Type Categorization** | Filter tabs for Text, Hyperlinks, Images, and Full Page bookmarks. |
+| **📝 Inline Modal Editor** | Edit notes, format URLs, or rewrite titles with an accessible modal dialog. |
+| **☑️ Multi-Selection Mode** | Easily select and batch-delete multiple items with confirmation prompts. |
+| **📋 Clipboard Integration** | Fast copy-to-clipboard with fallback support and toast feedback. |
+| **💾 JSON Backup & Migration** | One-click export and import for hassle-free data backups and migration. |
+| **🌙 Abyss / Dark Theme** | High-contrast dark palette tailored for night-time browsing and developer workspaces. |
+| **🛡️ 100% Private & Sandboxed** | Operates strictly via sandboxed `chrome.storage.local`. Zero network pings. |
 
 ---
 
@@ -86,7 +146,7 @@ No external tracking, no backend server, no cloud sync lock-in — everything li
 
 ### Manual Unpacked Installation (All Chromium Browsers)
 
-Works on **Google Chrome**, **Brave**, **Microsoft Edge**, **Arc**, **Vivaldi**, and **Opera**.
+Supported on **Google Chrome**, **Brave**, **Microsoft Edge**, **Arc**, **Vivaldi**, and **Opera**.
 
 1. **Clone or Download the Repository**:
    ```bash
@@ -110,39 +170,32 @@ Works on **Google Chrome**, **Brave**, **Microsoft Edge**, **Arc**, **Vivaldi**,
 
 ---
 
-## ⌨️ Usage & Shortcuts
+## ⌨️ Keyboard Shortcuts
 
-### Clipping Content
-- **Clip Text**: Select any text on a webpage $\rightarrow$ Right-click $\rightarrow$ **Save selection to Snippets**.
-- **Clip Link**: Right-click any hyperlink $\rightarrow$ **Save link to Snippets**.
-- **Clip Image**: Right-click any picture $\rightarrow$ **Save image to Snippets**.
-- **Clip Entire Page**: Right-click anywhere on the page $\rightarrow$ **Save page to Snippets**.
-
-### Managing Snippets
-- **Copy**: Click the **Copy** button on any card to copy its content to your clipboard.
-- **Pin / Unpin**: Click the pin icon to toggle priority ranking.
-- **Reorder**: Grab the drag handle on the upper right of any card to reorder items within its section.
-- **Edit**: Click the pencil icon to modify text or title.
-- **Dismiss Modals**: Press `Esc` or click anywhere on the background overlay to close active modals.
-- **Batch Delete**: Click the checklist button in the header, select items, and delete in bulk.
+| Shortcut / Action | Function |
+| :--- | :--- |
+| `Esc` | Close any active modal dialog (Edit Modal or Settings Modal) or exit Multi-Select Mode |
+| `Click Backdrop` | Click anywhere outside modal cards to immediately dismiss the modal |
+| `Enter` in Search | Jump through filtered results |
+| `Click Card` *(Selection Mode)* | Toggle selection checkbox for the clicked card |
 
 ---
 
 ## 🔒 Data Privacy & Storage
 
-- **Zero External Requests**: The extension makes zero network calls to 3rd-party servers or tracking services.
-- **Local Persistence**: Snippets are stored locally via Chromium's sandboxed `chrome.storage.local` API.
-- **Full Ownership**: You can export your data as standard JSON at any time from **Settings & Data** $\rightarrow$ **Export**.
+- **Zero External Requests**: The extension makes no network requests. There are no tracking scripts, analytics, or external CDNs.
+- **Local Persistence**: All snippets are saved directly inside Chrome's sandboxed `chrome.storage.local` engine.
+- **Portability**: Standard JSON backup format ensures you can extract or move your data whenever you like.
 
 ---
 
-## 📁 Project Structure
+## 📁 Project Architecture
 
 ```text
 Snippets/
 ├── background.js       # Manifest V3 service worker & context menu listener
 ├── manifest.json       # Extension configuration, permissions & metadata
-├── popup.html          # Main UI markup with modal templates & filter tabs
+├── popup.html          # Main popup UI markup with modal templates & filter tabs
 ├── popup.css           # Modern dark-mode styling, animations & layout
 ├── popup.js            # Core UI controller, drag & drop, search & backup logic
 ├── icons/              # Multi-resolution icons (16px, 32px, 48px, 128px)
@@ -150,19 +203,15 @@ Snippets/
 │   ├── icon32.png
 │   ├── icon48.png
 │   └── icon128.png
+├── assets/             # Screenshots, previews & walkthrough media
+│   ├── showcase.png
+│   ├── extension-popup.png
+│   ├── edit-modal.png
+│   └── settings-modal.png
+├── LICENSE             # MIT License
 ├── .gitignore          # Git exclusion rules
 └── README.md           # Documentation
 ```
-
----
-
-## 🛠️ Development & Customization
-
-Snippets has **zero build steps** and **zero node dependencies**. You can edit any HTML, CSS, or JS file directly:
-
-1. Make edits to `popup.js`, `popup.css`, or `popup.html`.
-2. Go to `chrome://extensions/` and click the **Reload (↻)** icon on the Snippets card.
-3. Open the extension popup to see changes instantly!
 
 ---
 
